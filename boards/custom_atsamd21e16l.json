@@ -1,0 +1,53 @@
+{
+  "build": {
+    "arduino": {
+        "ldscript": "flash_without_bootloader.ld"
+    },
+    "core": "arduino",
+    "cpu": "cortex-m0plus",
+    "extra_flags": "-DCRYSTALLESS -DARM_MATH_CM0PLUS -D__SAMD21E16L__",
+    "f_cpu": "48000000L",
+    "hwids": [
+      [
+        "0x239A",
+        "0x801E"
+      ],
+      [
+        "0x239A",
+        "0x001E"
+      ]
+    ],
+    "mcu": "samd21e16l",
+    "system": "samd",
+    "variant": "custom_atsamd21e16l"
+  },
+  "debug": {
+    "jlink_device": "ATSAMD21E16",
+    "openocd_chipname": "at91samd21e16",
+    "openocd_target": "at91samdXX",
+    "svd_path": "ATSAMD21E16L.svd"
+  },
+  "frameworks": [
+    "arduino"
+  ],
+  "name": "Custom ATSAMD21E16L Board",
+  "upload": {
+    "disable_flushing": true,
+    "maximum_ram_size": 8192,
+    "maximum_size": 65536,
+    "native_usb": false,
+    "offset_address": "0x0000",
+    "protocol": "atmel-ice",
+    "protocols": [
+      "sam-ba",
+      "blackmagic",
+      "jlink",
+      "atmel-ice"
+    ],
+    "require_upload_port": false,
+    "use_1200bps_touch": false,
+    "wait_for_upload_port": false
+  },
+  "url": "https://www.unknown.com/",
+  "vendor": "Custom"
+}
