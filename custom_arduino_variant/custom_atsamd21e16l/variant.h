@@ -77,21 +77,14 @@ extern "C"
 // #define digitalPinToTimer(P)
 
 // LEDs
-#define PIN_LED_13           (13u)
-#define PIN_LED_RXL          (21u)
-#define PIN_LED_TXL          (22u)
-#define PIN_LED              PIN_LED_13
-#define PIN_LED2             PIN_LED_RXL
-#define PIN_LED3             PIN_LED_TXL
-#define LED_BUILTIN          PIN_LED_13
-// DotStar LED
-#define INTERNAL_DS_DATA     7
-#define INTERNAL_DS_CLK      8
+#define PIN_LED_26           (26u)
+#define PIN_LED              PIN_LED_26
+#define LED_BUILTIN          PIN_LED_26
 
 /*
  * Analog pins
  */
-#define PIN_A0               (14ul)
+#define PIN_A0               (23ul)
 #define PIN_A1               (PIN_A0 + 1)
 #define PIN_A2               (PIN_A0 + 2)
 #define PIN_A3               (PIN_A0 + 3)
@@ -112,31 +105,31 @@ static const uint8_t DAC0 = PIN_DAC0;
  */
 
 // Serial1 (sercom 0)
-#define PIN_SERIAL1_RX       (3ul) // PA07
-#define PAD_SERIAL1_RX       (SERCOM_RX_PAD_3)
-#define PIN_SERIAL1_TX       (4ul) // PA06
-#define PAD_SERIAL1_TX       (UART_TX_PAD_2)
+#define PIN_SERIAL3_RX       (19ul) // PA25
+#define PAD_SERIAL3_RX       (SERCOM_RX_PAD_3)
+#define PIN_SERIAL3_TX       (18ul) // PA24
+#define PAD_SERIAL3_TX       (UART_TX_PAD_2)
 
 /*
  * SPI Interfaces
  */
 #define SPI_INTERFACES_COUNT 1 // shared with I2C/UART (can't do both)
 
-#define PIN_SPI_MISO         (6u)  // PA09 same as D2
-#define PIN_SPI_MOSI         (4u)
-#define PIN_SPI_SCK          (3u)
-#define PERIPH_SPI           sercom0
-#define PAD_SPI_TX           SPI_PAD_2_SCK_3
-#define PAD_SPI_RX           SERCOM_RX_PAD_1
+#define PIN_SPI_MISO         (16u)  // PA19
+#define PIN_SPI_MOSI         (13u)  // PA16
+#define PIN_SPI_SCK          (14u)  // PA17
+#define PERIPH_SPI           sercom1
+#define PAD_SPI_TX           SPI_PAD_0_SCK_1
+#define PAD_SPI_RX           SERCOM_RX_PAD_3
 
-static const uint8_t SS	  = 5 ;	// SERCOM0 last PAD is present on 5 but HW SS isn't used. Set here only for reference.
+//static const uint8_t SS	  = 5 ;	// SERCOM0 last PAD is present on 5 but HW SS isn't used. Set here only for reference.
 static const uint8_t MOSI = PIN_SPI_MOSI ;
 static const uint8_t MISO = PIN_SPI_MISO ;
 static const uint8_t SCK  = PIN_SPI_SCK ;
 
 /*
  * Wire Interfaces
- */
+ 
 #define WIRE_INTERFACES_COUNT 1
 
 #define PIN_WIRE_SDA         (0u)
@@ -145,14 +138,14 @@ static const uint8_t SCK  = PIN_SPI_SCK ;
 #define WIRE_IT_HANDLER      SERCOM2_Handler
 
 static const uint8_t SDA = PIN_WIRE_SDA;
-static const uint8_t SCL = PIN_WIRE_SCL;
+static const uint8_t SCL = PIN_WIRE_SCL;*/
 
 /*
  * USB
- */
+ 
 #define PIN_USB_HOST_ENABLE (9ul)
 #define PIN_USB_DM          (10ul)
-#define PIN_USB_DP          (11ul)
+#define PIN_USB_DP          (11ul)*/
 
 #ifdef __cplusplus
 }
